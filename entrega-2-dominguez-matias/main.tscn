@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://to6u08r35br1"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_4ooiw"]
+[ext_resource type="Texture2D" uid="uid://bprhend6c50gi" path="res://assets/textures/background.png" id="1_e0xgm"]
+[ext_resource type="Texture2D" uid="uid://dou4lnw7iv0u5" path="res://assets/textures/floor.png" id="2_emoun"]
+[ext_resource type="PackedScene" uid="uid://bu3u0sp0rcfod" path="res://entities/player/player.tscn" id="3_ox8xw"]
+[ext_resource type="PackedScene" uid="uid://blujtvtqjfbbm" path="res://entities/turret.tscn" id="5_nswdk"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_4ooiw")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(576, 326.001)
+scale = Vector2(1.4425, 1.08334)
+texture = ExtResource("1_e0xgm")
+
+[node name="Floor" type="Sprite2D" parent="."]
+position = Vector2(577, 555)
+scale = Vector2(17.4848, 2.87879)
+texture = ExtResource("2_emoun")
+
+[node name="Player" parent="." instance=ExtResource("3_ox8xw")]
+position = Vector2(549, 429)
+
+[node name="Turret" parent="." instance=ExtResource("5_nswdk")]
+position = Vector2(235, 151)
+
+[node name="Turret2" parent="." instance=ExtResource("5_nswdk")]
+position = Vector2(470, 83)
+
+[node name="Turret3" parent="." instance=ExtResource("5_nswdk")]
+position = Vector2(898, 157)
+
+[node name="Turret4" parent="." instance=ExtResource("5_nswdk")]
+position = Vector2(701, 149)
