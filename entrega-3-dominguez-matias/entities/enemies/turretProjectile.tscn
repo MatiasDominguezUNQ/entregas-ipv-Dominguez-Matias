@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxy6oj4v64pr7"]
+
+[ext_resource type="PackedScene" uid="uid://c5uidt5ccwv1h" path="res://entities/abstractProjectile.tscn" id="1_boyiy"]
+[ext_resource type="Texture2D" uid="uid://bosjp7ko6ub0" path="res://assets/textures/proyectile_turret.png" id="2_iqxi5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r6p1e"]
+radius = 9.0
+
+[node name="Projectile" instance=ExtResource("1_boyiy")]
+collision_layer = 16
+collision_mask = 0
+projectile_speed = 400.0
+
+[node name="Timer" parent="." index="0"]
+wait_time = 3.0
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_r6p1e")
+
+[node name="Sprite2D" parent="." index="2"]
+texture = ExtResource("2_iqxi5")

@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://bu3u0sp0rcfod"]
+
+[ext_resource type="Script" path="res://entities/player/player.gd" id="1_uy7ip"]
+[ext_resource type="Texture2D" uid="uid://oxyxuxbl7s3f" path="res://assets/textures/player.png" id="2_5h20j"]
+[ext_resource type="Texture2D" uid="uid://clcdrd6ldsc6s" path="res://assets/textures/cannon.png" id="3_w8kil"]
+[ext_resource type="Script" path="res://entities/player/cannon.gd" id="4_lb6h3"]
+[ext_resource type="PackedScene" uid="uid://b0r0tfacnupde" path="res://entities/player/projectile.tscn" id="5_5m7l8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lstag"]
+radius = 33.0
+height = 66.0
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(622, 326)
+collision_layer = 2
+script = ExtResource("1_uy7ip")
+
+[node name="Player" type="Sprite2D" parent="."]
+texture = ExtResource("2_5h20j")
+
+[node name="HitDetection" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="HitArea" type="CollisionShape2D" parent="HitDetection"]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_lstag")
+
+[node name="Cannon" type="Sprite2D" parent="."]
+texture = ExtResource("3_w8kil")
+script = ExtResource("4_lb6h3")
+projectile_scene = ExtResource("5_5m7l8")
+
+[node name="FirePosition" type="Marker2D" parent="Cannon"]
+position = Vector2(15, 0)
+
+[node name="PlayerBody" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_lstag")
+
+[connection signal="area_entered" from="HitDetection" to="." method="_on_hit_detection_area_entered"]
