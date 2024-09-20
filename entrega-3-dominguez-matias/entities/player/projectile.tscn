@@ -7,8 +7,8 @@
 radius = 9.0
 
 [node name="Projectile" instance=ExtResource("1_whb5c")]
-collision_layer = 8
-collision_mask = 0
+collision_layer = 9
+collision_mask = 1
 projectile_speed = 400.0
 metadata/_edit_group_ = true
 

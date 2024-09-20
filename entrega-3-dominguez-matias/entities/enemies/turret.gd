@@ -7,6 +7,7 @@ var target
 var timer
 var projectile_container
 var fire_position
+var raycast
 
 func initialize(container, turret_pos, projectile_container):
 	self.turret_container = container
@@ -17,6 +18,8 @@ func initialize(container, turret_pos, projectile_container):
 func _ready() -> void:
 	fire_position = $FirePosition
 	timer = $Timer
+	raycast = $RayCast2D
+	set_physics_process(false)
 
 func _on_timer_timeout() -> void:
 	fire()
@@ -28,21 +31,33 @@ func fire():
 	projectile_instance.delete_requested.connect(on_projectile_deleted_requested)
 
 func on_projectile_deleted_requested(projectile):
-	projectile_container.remove_child(projectile)
-	projectile.queue_free()
-
+	projectile_container.call_deferred("remove_child", projectile)
+	projectile.call_deferred("queue_free")
 
 func _on_detection_area_body_entered(body: Node2D) -> void:
-	target = body
-	timer.start()
+	if target == null:
+		target=body
+		set_physics_process(true)
 
 
-func _on_detection_area_body_exited(body: Node2D) -> void:
+func _on_DetectionArea_body_exited(body):
 	if body == target:
 		target = null
-		timer.stop()
+		set_physics_process(false)
 
 func _on_area_entered(area: Area2D) -> void:
 	turret_container.remove_child(self)
 	self.queue_free()
 	area.delete_requested.emit(area)
+
+func _physics_process(delta):
+	if is_instance_valid(target):
+		raycast.target_position = to_local(target.global_position)
+		if raycast.is_colliding() && raycast.get_collider() == target:
+			if timer.is_stopped():
+				timer.start()
+		elif !timer.is_stopped():
+			timer.stop()
+	else:
+		if !timer.is_stopped():
+			timer.stop()

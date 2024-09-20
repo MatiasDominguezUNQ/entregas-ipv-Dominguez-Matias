@@ -20,3 +20,6 @@ func _physics_process(delta):
 
 func _on_timer_timeout() -> void:
 	delete_requested.emit(self)
+
+func _on_body_entered(body: Node2D) -> void:
+	delete_requested.emit(self)

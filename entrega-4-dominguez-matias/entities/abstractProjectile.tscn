@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5uidt5ccwv1h"]
+
+[ext_resource type="Script" path="res://entities/abstract_projectile.gd" id="2_oi2ls"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e057l"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"fire_loop",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"fire_start",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5s7fi"]
+radius = 5.0
+
+[node name="Projectile" type="Area2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("2_oi2ls")
+
+[node name="ProjectileAnimation" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+rotation = 0.0401425
+scale = Vector2(0.59375, 0.59375)
+sprite_frames = SubResource("SpriteFrames_e057l")
+animation = &"fire_loop"
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="ProjectileShape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5s7fi")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="ProjectileAnimation" to="." method="_on_projectile_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

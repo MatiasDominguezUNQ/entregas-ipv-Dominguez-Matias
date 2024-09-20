@@ -45,9 +45,13 @@ func _physics_process(_delta):
 			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
 
 func _on_hit_detection_area_entered(area: Area2D) -> void:
+	print("player hit")
+	call_deferred("_remove")
+	area.delete_requested.emit(area)
+
+func _remove():
 	var camera_position = player_camera.global_position
 	player_camera.get_parent().remove_child(player_camera)
 	get_tree().root.add_child(player_camera)
 	player_camera.global_position = camera_position
 	self.queue_free()
-	area.delete_requested.emit(area)
