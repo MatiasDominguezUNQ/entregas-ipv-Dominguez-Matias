@@ -1,3 +1,3 @@
-Entrega 3
+Entrega
 
 https://matiasdominguezunq.github.io/entregas-ipv-dominguez-matias/
