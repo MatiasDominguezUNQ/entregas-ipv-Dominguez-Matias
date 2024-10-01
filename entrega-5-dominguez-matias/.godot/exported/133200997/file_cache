@@ -1,0 +1,13 @@
+res://assets/textures/tileset/tile_map_layer.tscn::512938b60a1f37aeca6fff522def9157::1727757000::res://.godot/exported/133200997/export-6cc52615e509ea14807017e194e77ecf-tile_map_layer.scn
+res://src/entities/enemies/Turret.tscn::f83e0d4234ce134411a43127d0607f59::1727757000::res://.godot/exported/133200997/export-e19864785a525d6995b8c2f87bfc9654-Turret.scn
+res://src/entities/enemies/TurretProjectile.tscn::2c7a18d1158bb45d2f8b58c9822c3b36::1727757001::res://.godot/exported/133200997/export-d893f31bae6fd35fd47ea6f87a863c5c-TurretProjectile.scn
+res://src/entities/player/Player.tscn::8cb815dc06370748811c268d776ca1fe::1727757016::res://.godot/exported/133200997/export-e0fe83d0699faf1bc6c53173f0ddab46-Player.scn
+res://src/entities/player/PlayerProjectile.tscn::ccc73f0b704e17b3833639ca3fb2505d::1727474722::res://.godot/exported/133200997/export-e3ef0440b1dee2983b4c163b9ac1b2a2-PlayerProjectile.scn
+res://src/entities/AstarTilemap.tscn::22c0ea8f7d2b5334483bb68532db1e05::1727757000::res://.godot/exported/133200997/export-287658a74a679cbc6eb0decb992422ff-AstarTilemap.scn
+res://src/entities/Projectile.tscn::a1975cf6c3e83c92344a809efea8d317::1727474722::res://.godot/exported/133200997/export-d9a19886653d5a78aa5c9f7eee23e84f-Projectile.scn
+res://src/environment/DefaultBackground.tscn::6ddf4d54186756ea56fb1ec97e1bd18e::1727757000::res://.godot/exported/133200997/export-22415605f741e6368bfd289ce0fc28bd-DefaultBackground.scn
+res://src/environment/Goal.tscn::d31f7256662671a1c419ff8977bb6dcf::1727474722::res://.godot/exported/133200997/export-1b1e61ab86f3953ee321fc5c10f9bbdb-Goal.scn
+res://src/environment/Obstacle.tscn::f2bb159766a8cc43688e29a4cf032c4e::1727474722::res://.godot/exported/133200997/export-58fe20f5d5f90344541077420380550d-Obstacle.scn
+res://src/environment/Platform.tscn::27365b12d054abdf4f2966b893e6de3d::1727757000::res://.godot/exported/133200997/export-479afaff3438469faf0cad8545bcf829-Platform.scn
+res://src/Main.tscn::7cc5b5e1de1435720a2f15fe4d716864::1727757000::res://.godot/exported/133200997/export-af264238fd56c207f706f08f8043dda4-Main.scn
+res://default_env.tres::4bba7f37225bcd85695e77de010a8e84::1727757016::res://.godot/exported/133200997/export-7cf3fd67ad9f55210191d77b582b8209-default_env.res

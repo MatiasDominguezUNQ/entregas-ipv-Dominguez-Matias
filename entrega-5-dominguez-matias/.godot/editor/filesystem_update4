@@ -1,0 +1,9 @@
+res://default_env.tres
+res://src/Main.tscn
+res://src/entities/player/Player.tscn
+res://src/environment/Platform.tscn
+res://src/entities/AstarTilemap.tscn
+res://src/environment/DefaultBackground.tscn
+res://assets/textures/tileset/tile_map_layer.tscn
+res://src/entities/enemies/Turret.tscn
+res://src/entities/enemies/TurretProjectile.tscn
